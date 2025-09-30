@@ -1,3 +1,7 @@
-Flask==2.1.2
-edge-tts==0.1.0
+Flask[async]
+edge-tts
+python-dotenv
 gunicorn==20.1.0
+werkzeug==2.1.2
+asgiref
+hypercorn

@@ -1,20 +1,14 @@
-version: '3.8'
+networks:
+  nginx_bridge:
+    external: true
 
 services:
   flask-app:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    build: .
     ports:
       - "5000:5000"
-    volumes:
-      - ./app:/app
     environment:
-      FLASK_ENV: development
-      FLASK_APP: app.main:app
+      - FLASK_ENV=production
+    restart: unless-stopped
     networks:
-      - flask-network
-
-networks:
-  flask-network:
-    driver: bridge
+      - nginx_bridge

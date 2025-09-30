@@ -68,6 +68,33 @@ POST /api/tts
 
 The API will return an audio file in response to the text-to-speech request.
 
+## Authentication
+
+This API requires an API key for access. Set your API key in the `.env` file:
+
+```bash
+API_KEY=your-secret-api-key-here
+```
+
+### Using the API Key
+
+Include the API key in your requests using one of these methods:
+
+1. **As a header (recommended):**
+   ```bash
+   curl -X POST http://localhost:5000/tts \
+     -H "Content-Type: application/json" \
+     -H "X-API-Key: your-secret-api-key-here" \
+     -d '{"text": "Hello world", "voice": "en-US-AriaNeural"}'
+   ```
+
+2. **As a query parameter:**
+   ```bash
+   curl -X POST http://localhost:5000/tts?api_key=your-secret-api-key-here \
+     -H "Content-Type: application/json" \
+     -d '{"text": "Hello world", "voice": "en-US-AriaNeural"}'
+   ```
+
 ## Contributing
 
 Feel free to submit issues or pull requests for improvements or bug fixes.
