@@ -42,7 +42,7 @@ asgi_app = WsgiToAsgi(app)
 
 async def main():
     config = Config()
-    config.bind = ["localhost:5000"]
+    config.bind = ["0.0.0.0:5000"]
     await serve(asgi_app, config)
 
 
