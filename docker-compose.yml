@@ -3,7 +3,7 @@ networks:
     external: true
 
 services:
-  flask-app:
+  edgetts:
     build: .
     # ports:
     #   - "5000:5000"
